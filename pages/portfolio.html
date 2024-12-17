@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - ReynaldyAl Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="../assets/style/gallery-about.css" rel="stylesheet">
+    <link href="../assets/style/portfolio-section.css" rel="stylesheet">
+    <link href="../assets/style/portfolio.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">ReynaldyAl</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link  " href="about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+    <main>
+        <section class="portfolio-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Projects</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="web">Web Dev</button>
+                        <button class="filter-btn" data-filter="mobile">Mobile</button>
+                        <button class="filter-btn" data-filter="ui">UI/UX</button>
+                    </div>
+                </div>
+
+                <div class="portfolio-grid">
+                    <!-- Project Card 1 -->
+                    <div class="portfolio-item" data-category="web">
+                        <div class="portfolio-card">
+                            <div class="portfolio-img">
+                                <img src="../assets/images/portfolio/project-library.png" alt="Library System">
+                                <div class="portfolio-overlay">
+                                    <div class="portfolio-links">
+                                        <a href="#" class="btn-demo" data-modal="project1">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="https://github.com/reynaldyAl/Laravel-Library_Project" class="btn-source" target="_blank">
+                                            <i class="bi bi-github"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portfolio-info">
+                                <h4>Library Management System</h4>
+                                <div class="project-description">
+                                    <p class="description-preview">A comprehensive library management system built with Laravel, featuring user authentication, book tracking, and automated notifications.</p>
+                                    <div class="description-full">
+                                        <ul>
+                                            <li>User authentication and role-based access control</li>
+                                            <li>Book inventory management with barcode scanning</li>
+                                            <li>Automated email notifications for due dates</li>
+                                            <li>Fine calculation system</li>
+                                            <li>Real-time availability status</li>
+                                        </ul>
+                                    </div>
+                                    <button class="read-more-btn">Read More</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Modal -->
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <div class="modal-body"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="../assets/js/styling.js"></script>
+    <script src="../assets/js/portfolio-section.js"></script>
+    <script src="../assets/js/gallery-me.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</body>
+</html>
