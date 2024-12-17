@@ -1543,6 +1543,123 @@ footer a {
   0% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.5); opacity: 0; }
 }
+.certificate-section {
+    padding: 2rem 0;
+}
 
+.no-certificate-card {
+    background: rgba(31, 31, 31, 0.8);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    transform: translateY(0);
+    transition: all 0.3s ease;
+}
 
+.no-certificate-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 215, 0, 0.3);
+}
+
+.no-certificate-card i {
+    font-size: 3.5rem;
+    color: #FFD700;
+    margin-bottom: 25px;
+    display: inline-block;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+.no-certificate-card h3 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.journey-text {
+    color: #fff;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.current-status {
+    margin: 25px 0;
+}
+
+.status-badge, .year-badge {
+    background: rgba(255, 215, 0, 0.1);
+    color: #FFD700;
+    padding: 8px 20px;
+    border-radius: 25px;
+    margin: 0 8px;
+    font-size: 0.95rem;
+    display: inline-block;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.status-badge:hover, .year-badge:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.motivation-quote {
+    color: #888;
+    font-style: italic;
+    margin-top: 30px;
+    padding: 25px;
+    border-top: 1px solid rgba(255, 215, 0, 0.1);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+}
+
+.motivation-quote::before,
+.motivation-quote::after {
+    content: '"';
+    color: rgba(255, 215, 0, 0.3);
+    font-size: 2.5rem;
+    position: absolute;
+}
+
+.motivation-quote::before {
+    left: 10px;
+    top: 15px;
+}
+
+.motivation-quote::after {
+    right: 10px;
+    bottom: -15px;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@media (max-width: 768px) {
+    .no-certificate-card {
+        padding: 30px 20px;
+        margin: 0 15px;
+    }
+    
+    .journey-text {
+        font-size: 1rem;
+    }
+    
+    .motivation-quote {
+        font-size: 1rem;
+        padding: 20px 15px;
+    }
+}
 
