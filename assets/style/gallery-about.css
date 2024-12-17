@@ -142,10 +142,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index: 1000;
+    z-index: 1100;
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s ease;
+     padding: 90px 40px 40px;
 }
 
 .lightbox.show {
@@ -154,35 +155,56 @@
 }
 
 .lightbox-content {
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 85%;
+    max-height: 85vh;
     position: relative;
+    background: rgba(31, 31, 31, 0.95);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
 }
 
 .lightbox-content img {
     max-width: 100%;
-    max-height: 80vh;
+    max-height: 55vh;
     object-fit: contain;
     border-radius: 8px;
+    margin-bottom: 20px;
 }
 
 .lightbox-info {
     color: #fff;
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
+    padding: 15px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 .close-lightbox {
     position: absolute;
-    top: -40px;
+    top: -45px;
     right: 0;
-    background: none;
+    background: rgba(31, 31, 31, 0.8);
     border: none;
-    color: #fff;
+    color: #FFD700;
     font-size: 2rem;
     cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
 }
 
+.close-lightbox:hover {
+    background: rgba(255, 215, 0, 0.2);
+    transform: rotate(90deg);
+}
 .gallery-card::before {
     content: '';
     position: absolute;

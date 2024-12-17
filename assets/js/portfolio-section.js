@@ -588,7 +588,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //scroll progress indicator
-// Add scroll progress indicator
 document.addEventListener('DOMContentLoaded', () => {
     const navbar = document.querySelector('.navbar');
     const scrollIndicator = document.createElement('div');
@@ -600,5 +599,28 @@ document.addEventListener('DOMContentLoaded', () => {
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
         const scrolled = (winScroll / height) * 100;
         scrollIndicator.style.setProperty('--scroll-width', `${scrolled}%`);
+    });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    const filterPortfolio = (filterValue) => {
+        portfolioItems.forEach(item => {
+            if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                item.classList.remove('hide');
+            } else {
+                item.classList.add('hide');
+            }
+        });
+    };
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            e.currentTarget.classList.add('active');
+            filterPortfolio(e.currentTarget.getAttribute('data-filter'));
+        });
     });
 });
