@@ -538,3 +538,67 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+// portofolio 
+document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('projectModal');
+    const closeBtn = modal.querySelector('.close-modal');
+    const modalContent = modal.querySelector('.modal-content');
+
+    function openModal(imgSrc, title, description) {
+        modal.style.display = 'block';
+        setTimeout(() => modal.classList.add('show'), 10);
+        modalContent.innerHTML = `
+            <span class="close-modal">&times;</span>
+            <h3>${title}</h3>
+            <img src="${imgSrc}" alt="${title}" class="modal-img">
+            <div class="modal-description">
+                <p>${description}</p>
+            </div>
+        `;
+    }
+
+    function closeModal() {
+        modal.classList.remove('show');
+        setTimeout(() => modal.style.display = 'none', 300);
+    }
+
+    document.querySelectorAll('.btn-demo').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.portfolio-card');
+            const imgSrc = card.querySelector('img').dataset.src;
+            const title = card.querySelector('h4').textContent;
+            const description = card.querySelector('.description-preview').textContent;
+            openModal(imgSrc, title, description);
+        });
+    });
+
+    document.addEventListener('click', (e) => {
+        if (e.target.matches('.close-modal')) {
+            closeModal();
+        }
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+});
+
+//scroll progress indicator
+// Add scroll progress indicator
+document.addEventListener('DOMContentLoaded', () => {
+    const navbar = document.querySelector('.navbar');
+    const scrollIndicator = document.createElement('div');
+    scrollIndicator.className = 'scroll-progress';
+    navbar.appendChild(scrollIndicator);
+
+    window.addEventListener('scroll', () => {
+        const winScroll = document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        scrollIndicator.style.setProperty('--scroll-width', `${scrolled}%`);
+    });
+});

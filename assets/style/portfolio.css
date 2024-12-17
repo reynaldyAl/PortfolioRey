@@ -12,6 +12,21 @@ html {
     scroll-padding-top: 80px;
 }
 
+main {
+    margin-top: 100px;
+}
+
+/* Add scroll progress indicator */
+.scroll-progress {
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(to right, #FFD700, #FFA500);
+    width: var(--scroll-width, 0%);
+    transition: width 0.1s ease;
+}
+
 /* Navbar Styling */
 .navbar {
   background: rgba(31, 31, 31, 0.8);
@@ -34,6 +49,11 @@ html {
   font-size: 1.8rem;
   position: relative;
   overflow: hidden;
+  text-shadow: 0 0 10px rgba(255, 217, 0, 0.526);
+}
+
+.navbar-brand:hover {
+    animation: glow 2s ease-in-out infinite alternate;
 }
 
 .navbar-brand::after {
@@ -95,7 +115,14 @@ html {
 .nav-link.active {
   color: #FFD700 !important;
   background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 15px rgba(255, 217, 0, 0.17);
 }
+
+.nav-item:hover {
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
+}
+
 
 .navbar-toggler {
   border: none;
