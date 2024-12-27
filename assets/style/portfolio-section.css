@@ -122,17 +122,45 @@
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
 }
 
 .portfolio-item {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    min-height: 450px;
+    background: rgba(31, 31, 31, 0.95);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item.hidden {
+    min-height: 450px; 
+    background: rgba(31, 31, 31, 0.7);
+    opacity: 0.7;
+    border: 1px solid rgba(255, 215, 0, 0.1);
+}
+
+.portfolio-item.hide {
+    min-height: 450px;
+    display: block;
+    opacity: 0.5;
+    background: rgba(31, 31, 31, 0.5);
+}
+
+/* responsive for port item */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+    .portfolio-item, 
+    .portfolio-item.hidden,
+    .portfolio-item.hide {
+        min-height: 400px;
+    }
 }
 
 .portfolio-card {
@@ -196,7 +224,7 @@
     justify-content: center;
     opacity: 0;
     transition: all 0.3s ease;
-    z-index: 10; /* Add this */
+    z-index: 10; 
 }
 
 .portfolio-card:hover .portfolio-overlay {

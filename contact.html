@@ -11,6 +11,7 @@
     <link href="../assets/style/gallery-about.css" rel="stylesheet">
     <link href="../assets/style/portfolio-section.css" rel="stylesheet">
     <link href="../assets/style/portfolio.css" rel="stylesheet">
+    <link href="../assets/style/music.css" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
@@ -39,10 +40,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="portfolio.html">Portfolio</a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
     </nav>
+
+    <!-- music  -->
+    <div class="music-player">
+        <audio id="bgMusic" loop>
+            <source src="assets/music/The1975-Roadkill.mp3" type="audio/mp3">
+        </audio>
+        <button id="musicToggle" class="music-toggle">
+            <i class="bi bi-music-note-beamed"></i>
+        </button>
+    </div>
 
     <main>
         <section class="contact-section container my-5 py-5">
@@ -155,6 +167,7 @@
     <script src="../assets/js/styling.js"></script>
     <script src="../assets/js/portfolio-section.js"></script>
     <script src="../assets/js/gallery-me.js"></script>
+    <script src="../assets/js/music.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </body>
 </html>

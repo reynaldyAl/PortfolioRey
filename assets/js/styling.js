@@ -1,30 +1,42 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    function typeEffect(element, text, speed) {
-      let i = 0;
-      function typing() {
-        if (i < text.length) {
-          element.innerHTML += text.charAt(i);
-          i++;
-          setTimeout(typing, speed);
-        } else {
-          setTimeout(() => {
-            element.innerHTML = '';
-            i = 0;
-            typing();
-          }, 2000); // Delay before restarting the typing effect
-        }
+  const typeEffect = async (element, text, speed) => {
+      if (!element) return;
+
+      const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+      
+      while (true) {
+          element.innerHTML = '';
+          // Type text
+          for (let i = 0; i < text.length; i++) {
+              element.innerHTML += text.charAt(i);
+              await sleep(speed);
+          }
+          
+          // Wait before deleting
+          await sleep(2000);
+          
+          // Delete text
+          for (let i = text.length; i >= 0; i--) {
+              element.innerHTML = text.substring(0, i);
+              await sleep(speed/2);
+          }
+          
+          // Wait before next loop
+          await sleep(500);
       }
-      element.innerHTML = '';
-      typing();
-    }
-  
-    const headingElement = document.querySelector('.heading-warna');
-    const paragraphElement = document.querySelector('.paragraf-warna');
-  
-    typeEffect(headingElement, "Reynaldy Al", 70);
-    typeEffect(paragraphElement, "Maha-Student | Universitas Hasanuddin", 50);
-  
+  };
+
+  const elements = {
+      heading: document.querySelector('.heading-warna'),
+      paragraph: document.querySelector('.paragraf-warna')
+  };
+
+  if (elements.heading) {
+      typeEffect(elements.heading, "Reynaldy Al", 100);
+  }
+  if (elements.paragraph) {
+      typeEffect(elements.paragraph, "Information Systems Student", 80);
+  }
     // Fade-in effect
     const fadeInElements = document.querySelectorAll('.fade-in');
     fadeInElements.forEach(element => {
